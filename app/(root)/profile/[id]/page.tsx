@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 
 import { profileTabs } from "@/constants";
 
-import ThreadsTab from "@/components/shared/ThreadsTab";
+// import ThreadsTab from "@/components/shared/ThreadsTab";
 import ProfileHeader from "@/components/shared/ProfileHeader";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -57,11 +57,11 @@ async function Page({ params }: { params: { id: string } }) {
               className='w-full text-light-1'
             >
               {/* @ts-ignore */}
-              <ThreadsTab
+              {/* <ThreadsTab
                 currentUserId={user.id}
                 accountId={userInfo.id}
                 accountType='User'
-              />
+              /> */}
             </TabsContent>
           ))}
         </Tabs>
