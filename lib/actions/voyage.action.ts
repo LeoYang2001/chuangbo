@@ -15,11 +15,12 @@ interface Params {
     arrival: string,
     status:string,
     arrivalTime:Date,
-    departureTime:Date
+    departureTime:Date,
+    file:string
   }
   
 
-export async function createVoyage({ author, voyageNumber, portToll, departure, arrival,status,arrivalTime,departureTime }: Params
+export async function createVoyage({ author, voyageNumber, portToll, departure, arrival,status,arrivalTime,departureTime,file }: Params
     ) {
       try {
         connectToDB();
@@ -39,7 +40,8 @@ export async function createVoyage({ author, voyageNumber, portToll, departure, 
             arrival,
             status,
             arrivalTime,
-            departureTime
+            departureTime,
+            file
         });
     
         console.log('voyage created!')

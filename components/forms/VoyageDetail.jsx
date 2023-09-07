@@ -4,6 +4,7 @@ import DeleteButton from '@/components/shared/DeleteButton'
 import { formatDate } from '@/lib/utils';
 import ApplicationCard from '@/components/cards/ApplicationCard'
 import { fetchApplicationsByVoyageId } from '@/lib/actions/application.action';
+import FileDownloader from '../shared/FileDownloader';
 
 
 const VoyageDetail = async ({voyageData,ifAccess}) => {
@@ -69,6 +70,11 @@ const VoyageDetail = async ({voyageData,ifAccess}) => {
       <div className='detailItem'>
           <h1>Arrival</h1>
           <h2>{`${voyageInfo.arrival} | ${formatDate(voyageInfo.arrivalTime)}`}</h2>
+      </div>
+
+      <div className='detailItem'>
+          <h1>Download File</h1>
+          <FileDownloader fileUrl={voyageInfo.file}/>
       </div>
 
       <div style={{

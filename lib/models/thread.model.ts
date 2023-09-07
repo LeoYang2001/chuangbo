@@ -29,16 +29,6 @@ const threadSchema = new mongoose.Schema({
   ],
 });
 
-
-
-let Thread;
-
-try {
-  // Try to fetch the existing model (if it has already been compiled)
-  Thread = mongoose.model('Thread');
-} catch (e) {
-  // If the model does not exist, create and compile it
-  Thread = mongoose.model('Thread', threadSchema);
-}
+const Thread = mongoose.models.Thread || mongoose.model("Thread", threadSchema);
 
 export default Thread;

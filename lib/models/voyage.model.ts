@@ -47,7 +47,11 @@ const voyageSchema = new mongoose.Schema({
       }
     ],
     default : []
-  }
+  },
+  file: {
+        type:String,
+        required:true
+    }
 });
 
 const Voyage = mongoose.models.Voyage || mongoose.model("Voyage", voyageSchema);
